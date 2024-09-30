@@ -10,4 +10,5 @@ to compress the history in the background then transform the output as if it wer
 by the user and add it to a new empty stack as a user input.
 
 ## Usage
-Run **`./lama.py <conversation_name>`**
+Run **`./lama.py <conversation_name>`**<br>
+Use the UP arrow to resend the last request, this will remove the last answer and replace it with a new.
