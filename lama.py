@@ -9,6 +9,7 @@
 VERSION="0.1.0"
 import ollama
 import os.path
+import os
 import sys
 import json
 import readline
@@ -32,7 +33,10 @@ if len(sys.argv) < 2:
     print("Usage: lama.py <conversation_name>")
     sys.exit(1)
 else:
-    SOURCE = sys.argv[1]
+    HOME = os.path.expanduser( '~/' )
+    if not os.path.exists("%s.lama" % HOME):
+        os.makedirs("%s.lama" % HOME)
+    SOURCE = HOME + '.lama/' + sys.argv[1]
 
 def loadDB():
     global HISTORY, SOURCE
