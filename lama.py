@@ -36,15 +36,15 @@ else:
 
 def loadDB():
     global HISTORY, SOURCE
-    if os.path.exists('%s.db' % SOURCE):
-        with open('%s.db' % SOURCE, 'r') as db:
+    if os.path.exists('%s' % SOURCE):
+        with open('%s' % SOURCE, 'r') as db:
             HISTORY = json.load(db)
     else:
         saveDB()
 
 def saveDB():
     global HISTORY, SOURCE
-    with open('%s.db' % SOURCE, 'w') as db:
+    with open('%s' % SOURCE, 'w') as db:
         json.dump(HISTORY, db)
 
 def run_query():
