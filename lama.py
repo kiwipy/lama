@@ -6,7 +6,7 @@
 # Website:     https://github.com/william-andersson
 # License:     GPL
 #
-VERSION="0.2.0"
+VERSION="0.2.1"
 import ollama
 import os.path
 import os
@@ -74,6 +74,7 @@ def run_query():
     )
 
     StringLen = 0
+    TermSize = os.get_terminal_size()
     for chunk in stream:
         # Collect the output from assistant.
         answer += chunk['message']['content']
@@ -81,7 +82,7 @@ def run_query():
             # Don't print output from optimize function.
             # Implement some crude wordwrapping using StringLen.
             StringLen += len(chunk['message']['content'])
-            if (StringLen + 3) > 80:
+            if (StringLen + 4) > TermSize.columns:
                 print(f"\n{chunk['message']['content']}", end='', flush=True)
                 StringLen = len(chunk['message']['content'])
             else:
