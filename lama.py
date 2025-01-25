@@ -2,8 +2,8 @@
 #
 # Application: Lama
 # Comment:     Small script to experiment with conversation history.
-# Copyright:   William Andersson 2024
-# Website:     https://github.com/william-andersson
+# Copyright:   2024, William Andersson
+# Website:     https://github.com/kiwipy/lama
 # License:     GPL
 #
 VERSION="0.3.0"
